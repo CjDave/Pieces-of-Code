@@ -21,26 +21,24 @@ for (int i = 0; i < len; i++)
 ```
 ### Leetcode Problem [(Integer to Roman)](https://leetcode.com/problems/integer-to-roman/)
 ```c#
-static void Main(string[] args)
+public class Solution {
+public string IntToRoman(int num) 
 {
-        int input = 33;
-
-        string result = "";
-        int len = input.ToString().Length;
-        int div = 10;
-        int divl;
-        int temp;
-        for (int i = 0; i < len; i++)
-        {
-            divl = div / 10;
-            temp = (input % div) - (input % divl);
-            temp = temp / divl;
-            div = div * 10;
-            result = conv(temp, i) + result;
-        }
-        Console.WriteLine(result);
+    string result = "";
+    int len = num.ToString().Length;
+    int div = 10;
+    int temp;
+    while (len > 0)
+    {
+           temp = (num % div) - (num % (div / 10));
+        temp = temp / (div / 10);
+        div = div * 10;
+        result = conv(temp, (num.ToString().Length-len)) + result;
+        len--;
+    }
+return result;
 }
-static string conv(int i, int p)
+string conv(int i, int p)
 {
     string[,] roman = new string[,]{ {"","I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"},
                                      {"","X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"}, // tens
@@ -49,6 +47,5 @@ static string conv(int i, int p)
                                      };
     return roman[p, i];
 }
-
-
+}
 ```
