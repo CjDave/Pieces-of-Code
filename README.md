@@ -1,4 +1,6 @@
 # Pieces-of-Code
+
+### Converting a digit to it's tens, hundreds, thousands...
 ```c#
 int inp = 64500;
 int len = inp.ToString().Length;
@@ -17,36 +19,36 @@ for (int i = 0; i < len; i++)
 }
 
 ```
-
+### Leetcode Problem [(Integer to Roman)](https://leetcode.com/problems/integer-to-roman/)
 ```c#
-    static void Main(string[] args)
-        {
-            int input = 33;
+static void Main(string[] args)
+{
+        int input = 33;
 
-            string result = "";
-            int len = input.ToString().Length;
-            int div = 10;
-            int divl;
-            int temp;
-            for (int i = 0; i < len; i++)
-            {
-                divl = div / 10;
-                temp = (input % div) - (input % divl);
-                temp = temp / divl;
-                div = div * 10;
-                result = conv(temp, i) + result;
-            }
-            Console.WriteLine(result);
-        }
-        static string conv(int i, int p)
+        string result = "";
+        int len = input.ToString().Length;
+        int div = 10;
+        int divl;
+        int temp;
+        for (int i = 0; i < len; i++)
         {
-            string[,] roman = new string[,]{ {"","I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"},
-                                             {"","X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"}, // tens
-                                             {"","C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"}, // hundreds
-                                             {"","M", "MM", "MMM","MMMM","V̅","V̅M","V̅MM","V̅MMM","I̅X̅"}
-                                             };
-            return roman[p, i];
+            divl = div / 10;
+            temp = (input % div) - (input % divl);
+            temp = temp / divl;
+            div = div * 10;
+            result = conv(temp, i) + result;
         }
-    }
+        Console.WriteLine(result);
+}
+static string conv(int i, int p)
+{
+    string[,] roman = new string[,]{ {"","I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"},
+                                     {"","X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"}, // tens
+                                     {"","C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"}, // hundreds
+                                     {"","M", "MM", "MMM","MMMM","V̅","V̅M","V̅MM","V̅MMM","I̅X̅"}
+                                     };
+    return roman[p, i];
+}
+
 
 ```
