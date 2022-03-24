@@ -1,5 +1,6 @@
 # Pieces-of-Code
 
+
 ### Converting a digit to it's tens, hundreds, thousands...
 ```c#
 int inp = 64500;
@@ -19,7 +20,9 @@ for (int i = 0; i < len; i++)
 }
 
 ```
-### Leetcode Problem [(Integer to Roman)](https://leetcode.com/problems/integer-to-roman/)
+---
+
+### My solution to [(Integer to Roman LeetCode)](https://leetcode.com/problems/integer-to-roman/)
 ```c#
 public class Solution {
 public string IntToRoman(int num) 
@@ -50,6 +53,8 @@ string conv(int i, int p)
 }
 ```
 
+---
+
 ### Python bot to spam text from a text file 
  ```python
 import pyautogui
@@ -67,3 +72,24 @@ for word in file:
 Add a text file with a bunch of words and you'll be good to go</br>
 <b> Idea gotten from [(Tiktok: @izzacode)](https://www.tiktok.com/@izzacodes/video/6860325937406364933?is_from_webapp=1&sender_device=pc&web_id=7078764212050986502)
 
+---    
+    
+### Creating/Running C# files in VScode
+To create a new  file
+  ```
+dotnet new console -o myApp
+  ```
+Shortcut for running C# 
+> Install [(Code Runner)](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) 
+
+> Navigate to File-> preference-> Settings -> \\In the search bar type "run in terminal"\\ OR Ctrl+  -> 
+> \\click on the check button\\ "Code-runner: Run In Terminal"-> 
+>
+> Click on the icon beside the run to open the settings/json file 
+> OR  
+> Open settings(Ctrl+) and search for "Code-runner: Executed Map" and click on Edit in "settings.json"
+>    
+> Type in "code-runner.executorMap"    
+> A list should appear, find "csharp" and replace "scriptcs" with ' "csharp": "cd $dir && dotnet run $fileName"'
+
+This is a written version of the [(video Tutorial)](https://www.youtube.com/watch?v=CO4BGZOuUkM&t=428s)
