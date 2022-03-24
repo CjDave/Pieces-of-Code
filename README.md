@@ -49,3 +49,21 @@ string conv(int i, int p)
 }
 }
 ```
+
+### Python bot to spam text from a text file 
+ ```python
+import pyautogui
+from time import sleep
+
+sleep(10)
+file = open('text')
+for word in file:
+    for two in word.split():
+        sleep(1)
+        pyautogui.write(two)
+        pyautogui.press("enter")
+
+```
+Add a text file with a bunch of words and you'll be good to go</br>
+<b> Idea gotten from [(Tiktok: @izzacode)](https://www.tiktok.com/@izzacodes/video/6860325937406364933?is_from_webapp=1&sender_device=pc&web_id=7078764212050986502)
+
