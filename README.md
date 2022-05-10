@@ -93,3 +93,9 @@ Shortcut for running C#
 > A list should appear, find "csharp" and replace "scriptcs" with ' "csharp": "cd $dir && dotnet run $fileName"'
 
 This is a written version of the [(video Tutorial)](https://www.youtube.com/watch?v=CO4BGZOuUkM&t=428s)
+
+### Line Separator(XAML)
+ ```XAML
+<!--Line Separetor-->
+<BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="FillAndExpand" />
+```
