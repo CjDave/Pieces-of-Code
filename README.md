@@ -99,3 +99,44 @@ This is a written version of the [(video Tutorial)](https://www.youtube.com/watc
 <!--Line Separetor-->
 <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="FillAndExpand" />
 ```
+
+### My solution to [(LongestCommonPrefix)](https://leetcode.com/problems/longest-common-prefix/)
+```c#
+public class Solution {
+    public string LongestCommonPrefix(string[] strs) {
+            int length = strs.Length;
+            string answer = "";
+            string temp;
+            int currLngth, ansLngth;
+            if (length > 0)
+            {
+                answer = strs[0];
+                for (int i = 1; i < length; i++)
+                {
+                    string curr = strs[i];
+                    if (answer != curr)
+                    {
+                        currLngth = curr.Length;
+                        ansLngth = answer.Length;
+                        answer = ansLngth > currLngth ? answer.Substring(0, currLngth) : answer;
+                        int p = 0;
+                        ansLngth = answer.Length;
+                        temp = "";
+                        while (p < ansLngth && answer[p] == curr[p])
+                        {
+                            temp = temp + answer[p];
+                            p++;
+                        }
+                        answer = temp;
+                    }
+
+                }
+            }
+            return answer;
+    }
+}
+```
+
+---
+
+
