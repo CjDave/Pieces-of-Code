@@ -100,7 +100,7 @@ This is a written version of the [(video Tutorial)](https://www.youtube.com/watc
 <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="FillAndExpand" />
 ```
 
-### My solution to [(LongestCommonPrefix)](https://leetcode.com/problems/longest-common-prefix/)
+### My solution to [(LongestCommonPrefix Leetcode)](https://leetcode.com/problems/longest-common-prefix/)
 ```c#
 public class Solution {
     public string LongestCommonPrefix(string[] strs) {
