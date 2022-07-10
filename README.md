@@ -137,36 +137,41 @@ public class Solution {
 }
 ```
 ### My solution to [(Remove Nth Node From End of List)](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
-```c# ListNode one, two;
-            two = head;
-            if (head != null && head.next != null)
+```c# 
+    public class Solution {
+      public ListNode RemoveNthFromEnd(ListNode head, int n) {
+        ListNode one, two;
+        two = head;
+        if (head != null && head.next != null)
+        {
+            for (int i = 0; i < n - 1; i++)
             {
-                for (int i = 0; i < n - 1; i++)
-                {
-                    two = two.next;
-                }
-                one = head;
-                if (two.next == null)
-                {
-                    head = head.next;
-                }
-                else
-                {
-                    two = two.next;
-                    while (two.next != null)
-                    {
-                        two = two.next;
-                        one = one.next;
-                    }
-                    one.next = one.next.next;
-                }
+                two = two.next;
+            }
+            one = head;
+            if (two.next == null)
+            {
+                head = head.next;
             }
             else
             {
-                head = null;
+                two = two.next;
+                while (two.next != null)
+                {
+                    two = two.next;
+                    one = one.next;
+                }
+                one.next = one.next.next;
             }
+        }
+        else
+        {
+            head = null;
+        }
 
-            return head;
+        return head;
+}
+}
 ```
 ---
 
